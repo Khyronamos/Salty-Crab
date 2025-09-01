@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TEMPLATE: Update Title for each page -->
+    <title>Style 16: The Salty Claw - Rustic Seafood Boil House</title>
+    <!-- TEMPLATE: Update Meta Description for SEO -->
+    <meta name="description" content="[Style 16] The Salty Claw Boil House: Get your hands dirty with fresh Cajun seafood boils, fried platters, and more in a fun, rustic setting.">
+    <!-- TEMPLATE: Favicon links would go here -->
+
+    <!-- Google Fonts & Tailwind CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap" rel="stylesheet"> <!-- Bold, slightly distressed heading font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!-- TEMPLATE: Custom CSS for Style 16: Rustic Seafood Shack -->
+    <style>
+        /* Docstring: Define color palette for the rustic seafood theme. */
+        :root {
+            --bg-primary: #FDF5E6;        /* Creamy Beige / Old Lace */
+            --bg-secondary: #E0F2FE;       /* Light Sky Blue */
+            --bg-card: #FFFFFF;
+            --text-primary: #5A463A;       /* Darker Brown */
+            --text-secondary: #8B6F5A;     /* Mid Brown */
+            --text-light: #B09A8C;        /* Light Brown */
+            --primary-color: #D9534F;      /* Muted Red */
+            --primary-color-dark: #C9302C; /* Darker Muted Red */
+            --accent-color: #0275D8;       /* Nautical Blue */
+            --accent-color-dark: #025AA5;  /* Darker Nautical Blue */
+            --border-color: #D1C6BA;       /* Beige Border */
+            --shadow-md: 0 4px 10px rgba(90, 70, 58, 0.1); /* Brownish shadow */
+            --shadow-lg: 0 8px 20px rgba(90, 70, 58, 0.15);
+            /* Optional: Add a subtle background texture URL */
+            /* --bg-texture: url('path/to/light-wood-texture.png'); */
+        }
+
+        /* Docstring: Base font settings. Passion One for headings, Inter for body. */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            /* background-image: var(--bg-texture); */ /* Uncomment to add texture */
+            color: var(--text-secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Passion One', cursive; /* Use the bolder heading font */
+            color: var(--text-primary);
+            font-weight: 700; /* Usually 700 for Passion One */
+            line-height: 1.2; /* Adjust line height for display font */
+            margin-bottom: 0.75em;
+            letter-spacing: 1px; /* Add slight letter spacing */
+        }
+        h2 { font-size: 3rem; margin-bottom: 2.5rem; color: var(--accent-color); } /* Blue section titles */
+        @media (min-width: 768px) { h2 { font-size: 3.5rem; } }
+        h3 { font-size: 2rem; color: var(--primary-color); } /* Red category titles */
+        h4 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.15rem; letter-spacing: 0; } /* Menu item titles use Inter Bold */
+
+
+        /* Link styling */
+        a { color: var(--accent-color); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; transition: color 0.3s ease; }
+        a:hover { color: var(--accent-color-dark); }
+
+        /* --- Animations (Simple Fades) --- */
+        .fade-in { animation: fadeIn 1.2s ease-out forwards; opacity: 0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Button Styles (Rustic/Casual) --- */
+        button, .button {
+             display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+             padding: 0.75rem 1.5rem; border-radius: 4px; /* Less rounding */ font-weight: 700; font-size: 1rem;
+             text-align: center; transition: all 0.3s ease; cursor: pointer;
+             border: 2px solid var(--text-primary); /* Dark border */
+             box-shadow: 3px 3px 0px var(--text-primary); /* Hard shadow */
+             font-family: 'Passion One', cursive; /* Button font */ letter-spacing: 1px;
+             background-color: var(--primary-color); /* Red background */ color: white;
+        }
+        button:hover, .button:hover {
+            background-color: var(--primary-color-dark);
+            box-shadow: 1px 1px 0px var(--text-primary); /* Reduce shadow on hover */
+            transform: translate(2px, 2px); /* Slight move on hover */
+        }
+        /* Secondary Button Style (Blue background) */
+        .button-secondary {
+             background-color: var(--accent-color); /* Blue background */
+             color: white;
+             border-color: var(--text-primary);
+             box-shadow: 3px 3px 0px var(--text-primary);
+        }
+        .button-secondary:hover {
+            background-color: var(--accent-color-dark);
+            box-shadow: 1px 1px 0px var(--text-primary);
+             transform: translate(2px, 2px);
+        }
+        button:focus, .button:focus { outline: 2px solid var(--primary-color); outline-offset: 2px; }
+
+
+        /* --- Menu Section Styling (Rustic) --- */
+        #menu { background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */ backdrop-filter: blur(5px); border-radius: 10px; }
+        .menu-category { margin-bottom: 3rem; }
+        .menu-category h3 { text-align: center; border-bottom: none; margin-bottom: 2rem; } /* Center category titles */
+
+        .menu-item {
+             margin-bottom: 1rem; padding: 1rem 1.25rem; background-color: var(--bg-card);
+             border-radius: 6px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color);
+             /* Optional: slight rotation? transform: rotate(-1deg); */
+        }
+        .menu-item h4 { /* Item Name */ color: var(--text-primary); margin-bottom: 0.25rem; }
+        .menu-item .description { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem; line-height: 1.5; }
+        .menu-item .price { font-size: 1rem; font-weight: 700; color: var(--primary-color); display: block; margin-top: 0.5rem; }
+
+        /* Platter / Sides Styling */
+        .platter-details, .sides-list { margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+        .platter-details strong, .sides-list strong { color: var(--text-primary); font-weight: 600; }
+        .sides-list span { display: block; margin-bottom: 0.25rem; } /* List sides vertically */
+        .omg-platter-card { background-color: var(--bg-secondary); border: 2px dashed var(--primary-color); } /* Special card for platters */
+
+
+        /* --- Testimonial Card (Simple) --- */
+        .testimonial-card { background-color: var(--bg-card); padding: 1.5rem; border-radius: 6px; margin-bottom: 1.5rem; box-shadow: var(--shadow-md); text-align: center; border: 1px solid var(--border-color); }
+        .testimonial-card p.quote-text { font-style: normal; color: var(--text-secondary); margin-bottom: 1rem; font-size: 1rem; }
+        .testimonial-card .author-info { font-weight: 600; color: var(--text-primary); }
+
+        /* --- FAQ Styling (Simple) --- */
+        .faq-item { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; margin-bottom: 1rem; overflow: hidden; box-shadow: var(--shadow-sm); }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 1rem 1.25rem; background: none; border: none; text-align: left; font-size: 1rem; font-weight: 700; color: var(--text-primary); cursor: pointer; transition: color 0.2s ease; font-family: 'Inter', sans-serif; }
+        .faq-question:hover { color: var(--accent-color); } /* Blue hover */
+        .faq-icon { transition: transform 0.3s ease; color: var(--accent-color); font-weight: bold; font-size: 1.2rem; margin-left: 1rem; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; padding: 0 1.25rem; color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem; border-top: 1px solid transparent; }
+        .faq-item.open { box-shadow: var(--shadow-md); }
+        .faq-item.open .faq-question { color: var(--accent-color); }
+        .faq-item.open .faq-icon { transform: rotate(135deg); }
+        .faq-item.open .faq-answer { padding: 0.5rem 1.25rem 1.25rem 1.25rem; border-top-color: var(--border-color); }
+
+
+        /* Section Backgrounds */
+         #hero, #about, #location, #contact { background-color: transparent; } /* Use body background */
+         #menu, #faq, #testimonials { /* Maybe add slight bg or keep transparent */ background-color: rgba(253, 245, 230, 0.7); backdrop-filter: blur(3px); } /* Semi-transparent beige */
+
+         /* Hamburger shake */
+         @keyframes shake { 0%{transform:translateX(0)}25%{transform:translateX(-4px)}50%{transform:translateX(4px)}75%{transform:translateX(-4px)}100%{transform:translateX(0)} }
+         .shake-animation { animation: shake 0.4s ease-in-out; }
+
+         /* Modal Styling (Adapted Light) */
+         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(90, 70, 58, 0.7); animation: fadeIn 0.3s ease-out; }
+         .modal-content { background-color: #fff; color: var(--text-primary); margin: 10% auto; padding: 2rem; border: 2px solid var(--text-primary); width: 90%; max-width: 500px; border-radius: 4px; box-shadow: 5px 5px 0px var(--text-primary); animation: fadeIn 0.4s ease-out; } /* Hard shadow on modal */
+         .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
+         .modal-header h2 { margin: 0; font-size: 2rem; font-weight: 700; color: var(--primary-color); letter-spacing: 1px;} /* Red title */
+         .close-button { color: var(--text-light); background: none; border: none; font-size: 2rem; font-weight: 500; cursor: pointer; transition: color 0.2s ease; line-height: 1; padding: 0.25rem; }
+         .close-button:hover, .close-button:focus { color: var(--text-primary); outline: none; }
+         .modal-body form label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-secondary); font-size: 0.9rem; }
+         .modal-body form input[type="text"], .modal-body form input[type="email"], .modal-body form input[type="tel"], .modal-body form textarea { width: 100%; padding: 0.7rem 1rem; margin-bottom: 1rem; border: 1px solid var(--border-color); background-color: #F8F9FA; color: var(--text-primary); border-radius: 4px; font-size: 1rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; outline: none; }
+         .modal-body form input::placeholder, .modal-body form textarea::placeholder { color: var(--text-light); }
+         .modal-body form input:focus, .modal-body form textarea:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.15); background-color: #fff; }
+         .modal-body form textarea { resize: vertical; min-height: 100px; }
+         .modal-footer { text-align: right; padding-top: 1rem; border-top: 1px solid var(--border-color); margin-top: 1rem; }
+         /* Feedback Styles adapted */
+         .form-feedback { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.9rem; display: none; font-weight: 500; }
+         .form-feedback.success { background-color: #dff0d8; color: #3c763d; border: 1px solid #d6e9c6; display: block; }
+         .form-feedback.error { background-color: #f2dede; color: #a94442; border: 1px solid #ebccd1; display: block; }
+         .form-feedback.loading { background-color: #d9edf7; color: #31708f; border: 1px solid #bce8f1; display: block; }
+
+    </style>
+</head>
+<!-- Docstring: Body uses creamy beige background. -->
+<body class="bg-[--bg-primary] font-inter text-[--text-secondary]">
+
+    <!-- ========================== -->
+    <!-- Header Section             -->
+    <!-- ========================== -->
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-md border-b border-[--border-color]">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- TEMPLATE: Update Logo -->
+            <a href="#" class="flex items-center text-3xl font-bold text-[--primary-color]"> <!-- Red Logo -->
+                 <i class="fas fa-crab mr-2"></i> <!-- Crab Icon -->
+                <!-- TEMPLATE: Update Brand Name -->
+                <span class="font-['Passion_One',cursive] tracking-wide">The Salty Claw</span>
+            </a>
+
+            <!-- TEMPLATE: Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#menu" class="text-gray-700 hover:text-[--primary-color] transition duration-300 font-medium text-sm">Menu</a>
+                <a href="#about" class="text-gray-700 hover:text-[--primary-color] transition duration-300 font-medium text-sm">Our Story</a>
+                <a href="#location" class="text-gray-700 hover:text-[--primary-color] transition duration-300 font-medium text-sm">Visit Us</a>
+                <a href="#contact" class="text-gray-700 hover:text-[--primary-color] transition duration-300 font-medium text-sm">Contact</a>
+                <!-- Desktop CTA -->
+                <a href="tel:555-CLAW-NOW" class="button text-sm">Call to Order!</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden"> <button id="hamburger-button" class="text-gray-700 focus:outline-none p-2" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="mobile-menu"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg> </button> </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 shadow-lg border-t border-gray-100 py-3" role="menu">
+             <a href="#menu" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[--primary-color] transition duration-300 font-medium" role="menuitem">Menu</a>
+             <a href="#about" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[--primary-color] transition duration-300 font-medium" role="menuitem">Our Story</a>
+             <a href="#location" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[--primary-color] transition duration-300 font-medium" role="menuitem">Visit Us</a>
+             <a href="#contact" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[--primary-color] transition duration-300 font-medium" role="menuitem">Contact</a>
+             <div class="px-4 py-3 mt-2 border-t border-gray-100">
+                  <a href="tel:555-CLAW-NOW" class="button w-full text-center mb-3">Call to Order!</a>
+                  <button id="mobile-quote-button" class="button button-secondary w-full text-center">Catering Inquiry</button> <!-- Example for modal -->
+             </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========================== -->
+        <!-- Hero Section               -->
+        <!-- ========================== -->
+         <section id="hero" class="py-20 md:py-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(253, 245, 230, 0.8), rgba(253, 245, 230, 0.8)), url('https://source.unsplash.com/random/1600x900/?beach,seafood,picnic');"> <!-- Beachy/Food BG -->
+            <div class="container mx-auto px-4 text-center">
+                <div class="fade-in max-w-3xl mx-auto">
+                    <!-- TEMPLATE: Update Hero Headline -->
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 !text-[--primary-color]"> <!-- Red Text -->
+                       Get Crackin'!
+                    </h1>
+                    <!-- TEMPLATE: Update Hero Sub-headline -->
+                    <p class="text-xl md:text-2xl text-[--text-primary] font-medium mb-10">
+                       Fresh Cajun Seafood Boils, Crispy Fried Baskets, and Good Times Daily.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#menu" class="button">See The Full Menu</a>
+                        <a href="#location" class="button button-secondary">Find Our Shack</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================== -->
+        <!-- About Section (Optional)   -->
+        <!-- ========================== -->
+        <section id="about" class="py-16 md:py-24 px-4">
+            <div class="container mx-auto max-w-3xl text-center fade-in">
+                <h2 class="!text-4xl">Our Story</h2> <!-- Override default H2 size/color -->
+                <!-- TEMPLATE: Update About Us text -->
+                <p class="text-lg text-[--text-secondary] leading-relaxed">
+                   Born from a love of backyard boils and coastal living, The Salty Claw brings authentic, no-frills Cajun seafood to the neighborhood. We source the freshest ingredients, mix up our secret spice blend, and serve it all up with a side of Southern hospitality. Come hang out, get messy, and taste the tradition!
+                </p>
+            </div>
+        </section>
+
+        <!-- ========================== -->
+        <!-- Menu Section (CORE)        -->
+        <!-- ========================== -->
+        <section id="menu" class="py-16 md:py-24 px-4">
+             <div class="container mx-auto max-w-6xl">
+                 <h2 class="text-center !text-5xl md:!text-6xl">The Main Catch</h2> <!-- Larger Menu Title -->
+
+                <!-- Boiled & Fried Grid -->
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-16 mb-16"> <!-- Increased gap -->
+                    <!-- Boiled Section -->
+                    <div class="menu-category fade-in">
+                        <h3>Get Your Boil On!</h3>
+                        <!-- TEMPLATE: Update Boiled Items & Prices -->
+                        <div class="menu-item"> <h4>Boiled Crayfish (Seasonal)</h4> <p class="description">Fresh Louisiana crawdads boiled in our signature Cajun spices.</p> <span class="price">Market Price / lb</span> </div>
+                        <div class="menu-item"> <h4>Boiled Shrimp</h4> <p class="description">Juicy Gulf shrimp boiled with corn and potatoes.</p> <span class="price">$15.99 / lb</span> </div>
+                        <div class="menu-item"> <h4>Shrimp Bayou Bag™</h4> <p class="description">1lb Shrimp, 1 Corn, 2 Potatoes, 1 Sausage link.</p> <span class="price">$21.99</span> </div>
+                        <div class="menu-item"> <h4>Sausage Bayou Bag™</h4> <p class="description">1lb Smoked Sausage, 1 Corn, 2 Potatoes.</p> <span class="price">$14.99</span> </div>
+                    </div>
+
+                    <!-- Fried Section -->
+                    <div class="menu-category fade-in" style="animation-delay: 0.1s;">
+                        <h3>Crispy & Fried!</h3>
+                         <!-- TEMPLATE: Update Fried Items & Prices -->
+                         <div class="menu-item"> <h4>Seafood Combo Basket</h4> <p class="description">Fried Shrimp (6), Fried Fish (2), Hush Puppies, Fries.</p> <span class="price">$18.99</span> </div>
+                         <div class="menu-item"> <h4>Shrimp Basket (12 pcs)</h4> <p class="description">12 Golden Fried Shrimp, Hush Puppies, Fries.</p> <span class="price">$16.99</span> </div>
+                         <div class="menu-item"> <h4>Shrimp Basket (8 pcs)</h4> <p class="description">8 Golden Fried Shrimp, Hush Puppies, Fries.</p> <span class="price">$13.99</span> </div>
+                         <div class="menu-item"> <h4>Fried Fish Basket</h4> <p class="description">4 Crispy Fried Fish Fillets (Catfish!), Hush Puppies, Fries.</p> <span class="price">$14.99</span> </div>
+                         <div class="menu-item"> <h4>Bayou Fried Special</h4> <p class="description">Fried Crawfish Tails, Fried Shrimp (4), Hush Puppies, Fries.</p> <span class="price">$19.99</span> </div>
+                         <div class="menu-item"> <h4>Seafood Gumbo</h4> <p class="description">Rich, dark roux gumbo with shrimp, crab, sausage, served over rice.</p> <span class="price">Cup $7.99 | Bowl $12.99</span> </div>
+                    </div>
+                </div>
+
+                <!-- OMG Platters Section -->
+                 <div class="mb-16 fade-in" style="animation-delay: 0.2s;">
+                     <h3 class="text-center !text-4xl">OMG Platters!</h3>
+                     <p class="text-center text-[--text-secondary] mb-8 max-w-lg mx-auto">Can't decide? Go BIG! Tossed in your choice of our signature sauces (Garlic Butter, Cajun, Lemon Pepper, or The Whole Sha-Bang!).</p>
+                     <div class="grid md:grid-cols-2 gap-8">
+                         <!-- Platter 1 -->
+                         <div class="menu-item omg-platter-card">
+                             <h4>OMG Platter #1</h4>
+                             <div class="platter-details"> <strong>Includes:</strong> 1 Crab Cluster, 1 Corn, 2 Potatoes, 1 Sausage, 8 Shrimp. </div>
+                             <span class="price">$34.99</span>
+                         </div>
+                         <!-- Platter 2 -->
+                         <div class="menu-item omg-platter-card">
+                             <h4>OMG Platter #2 (Feeds 2+)</h4>
+                             <div class="platter-details"> <strong>Includes:</strong> 2 Crab Clusters, 2 Corn, 4 Potatoes, 2 Sausages, 16 Shrimp (1lb!). </div>
+                             <span class="price">$64.99</span>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- Sides Section -->
+                 <div class="text-center fade-in" style="animation-delay: 0.3s;">
+                     <h3 class="!text-3xl">Fixin's & Sides</h3>
+                     <div class="sides-list text-[--text-secondary] text-lg max-w-md mx-auto mt-4">
+                         <!-- TEMPLATE: Update Sides & Prices -->
+                         <span><strong>Hush Puppies</strong> (6) - $3.99</span>
+                         <span><strong>Corn on the Cob</strong> (1) - $1.50</span>
+                         <span><strong>Red Potatoes</strong> (3) - $2.00</span>
+                         <span><strong>Smoked Sausage Link</strong> - $3.00</span>
+                         <span><strong>Garlic Butter Sauce</strong> (Side) - $1.00</span>
+                         <span><strong>French Fries</strong> - $3.50</span>
+                     </div>
+                 </div>
+
+            </div>
+        </section>
+
+         <!-- ========================== -->
+        <!-- Location & Hours Section   -->
+        <!-- ========================== -->
+        <section id="location" class="py-16 md:py-24 px-4">
+            <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in text-center md:text-left">
+                    <h2 class="!text-4xl">Find Our Shack!</h2>
+                    <!-- TEMPLATE: Update Address -->
+                    <p class="text-lg text-[--text-secondary] mb-4 flex items-center justify-center md:justify-start">
+                        <i class="fas fa-map-marker-alt mr-3 text-[--accent-color] text-xl"></i>
+                        <span>123 Salty Pier Rd, Coastal City, FL 30000</span>
+                    </p>
+                     <!-- TEMPLATE: Update Phone -->
+                     <p class="text-lg text-[--text-secondary] mb-6 flex items-center justify-center md:justify-start">
+                         <i class="fas fa-phone-alt mr-3 text-[--accent-color] text-xl"></i>
+                         <a href="tel:555-CLAW-NOW" class="underline">(555) CLAW-NOW</a>
+                     </p>
+                    <!-- TEMPLATE: Update Hours -->
+                     <h4 class="font-bold text-xl mb-2 text-[--text-primary]">Hours:</h4>
+                     <ul class="text-[--text-secondary] space-y-1">
+                         <li>Mon-Thu: 11:30 AM - 9:00 PM</li>
+                         <li>Fri-Sat: 11:30 AM - 10:00 PM</li>
+                         <li>Sun: 12:00 PM - 8:00 PM (Get here early!)</li>
+                     </ul>
+                </div>
+                <div class="fade-in" style="animation-delay: 0.1s;">
+                    <!-- TEMPLATE: Embed Google Map or add static map image -->
+                     <div class="rounded-lg shadow-lg overflow-hidden border-4 border-white"> <!-- Framed map -->
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322819!2d106.819561314769!3d-6.194420395514784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sNational%20Monument!5e0!3m2!1sen!2sid!4v1631176190514!5m2!1sen!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+
+         <!-- ========================== -->
+        <!-- FAQ Section (Optional)     -->
+        <!-- ========================== -->
+        <section id="faq" class="py-16 md:py-24 px-4">
+            <div class="container mx-auto max-w-3xl fade-in">
+                <h2 class="text-center !text-4xl">Got Questions?</h2>
+                <div class="mt-10">
+                    <!-- TEMPLATE: Update FAQ Items -->
+                     <div class="faq-item"> <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1"> <span>What kind of seasoning do you use?</span> <span class="faq-icon">+</span> </button> <div id="faq-answer-1" class="faq-answer" role="region" aria-hidden="true"> <p>It's our secret Salty Claw Cajun blend! A mix of spices with just the right amount of kick. We also offer Garlic Butter, Lemon Pepper, and The Whole Sha-Bang (all mixed together!).</p> </div> </div>
+                     <div class="faq-item"> <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2"> <span>Is the seating indoors or outdoors?</span> <span class="faq-icon">+</span> </button> <div id="faq-answer-2" class="faq-answer" role="region" aria-hidden="true"> <p>We have both! Enjoy our casual indoor dining area or grab a spot on our outdoor patio (weather permitting). It's all about getting messy and having fun.</p> </div> </div>
+                     <div class="faq-item"> <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3"> <span>Do you sell live crayfish/seafood?</span> <span class="faq-icon">+</span> </button> <div id="faq-answer-3" class="faq-answer" role="region" aria-hidden="true"> <p>We focus on cooking it up fresh for you! We don't typically sell live seafood for takeaway, but check with us during peak crayfish season.</p> </div> </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================== -->
+        <!-- Contact Section            -->
+        <!-- ========================== -->
+        <section id="contact" class="py-16 md:py-24 px-4 text-center">
+             <div class="container mx-auto max-w-2xl fade-in">
+                 <h2 class="!text-4xl md:!text-5xl">Ready to Get Your Bib On?</h2>
+                 <p class="text-lg text-[--text-secondary] mb-10">
+                     Come on down to The Salty Claw or give us a call to place your order!
+                 </p>
+                  <div class="flex flex-col sm:flex-row justify-center gap-4">
+                      <a href="tel:555-CLAW-NOW" class="button text-lg">Call (555) CLAW-NOW</a>
+                      <a href="#location" class="button button-secondary text-lg">Get Directions</a>
+                  </div>
+             </div>
+        </section>
+    </main>
+
+    <!-- ========================== -->
+    <!-- Footer Section             -->
+    <!-- ========================== -->
+    <footer class="bg-[--text-primary] text-[--bg-primary] py-8"> <!-- Dark Brown Footer -->
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>© <span id="current-year"></span> The Salty Claw Boil House. Good Food, Good Times.</p>
+             <!-- Add social links here if desired -->
+             <div class="mt-3 space-x-3">
+                 <a href="#" aria-label="Facebook" class="text-xl hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                 <a href="#" aria-label="Instagram" class="text-xl hover:text-white"><i class="fab fa-instagram"></i></a>
+                 <a href="#" aria-label="Yelp" class="text-xl hover:text-white"><i class="fab fa-yelp"></i></a>
+             </div>
+        </div>
+    </footer>
+
+    <!-- ========================== -->
+    <!-- Modals (Catering Inquiry?) -->
+    <!-- ========================== -->
+    <div id="quote-modal" class="modal" aria-hidden="true" aria-labelledby="quote-modal-title" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="quote-modal-title">Catering Inquiry</h2>
+                <button class="close-button" aria-label="Close modal">×</button>
+            </div>
+            <div class="modal-body">
+                 <p class="text-sm text-gray-600 mb-4">Planning a party? Let us bring the boil to you!</p>
+                <form id="quote-form" novalidate>
+                    <label for="modal-name">Name:</label>
+                    <input type="text" id="modal-name" name="name" required aria-required="true">
+                    <label for="modal-phone">Phone:</label>
+                    <input type="tel" id="modal-phone" name="phone" required aria-required="true">
+                    <label for="modal-email">Email:</label>
+                    <input type="email" id="modal-email" name="email" required aria-required="true">
+                    <label for="modal-details">Event Details (Date, Guests, Location):</label>
+                    <textarea id="modal-details" name="details" required aria-required="true" rows="4" placeholder="Approx. date, number of guests, event location..."></textarea>
+                    <div id="quote-feedback" class="form-feedback"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="submit-quote" type="submit" form="quote-form" class="button w-full">Send Catering Inquiry</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================== -->
+    <!-- JavaScript (Core Logic)    -->
+    <!-- ========================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Update Footer Year ---
+            const currentYear = new Date().getFullYear();
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) yearSpan.textContent = currentYear;
+
+            // --- Modal Handling (Catering Inquiry) ---
+            const quoteModal = document.getElementById('quote-modal');
+            // Link appropriate button if modal is used (e.g., a "Catering" button if added, or the mobile one)
+            const openQuoteButtons = document.querySelectorAll('#mobile-quote-button'); // Example: Link mobile catering button
+            const closeButtons = document.querySelectorAll('.modal .close-button');
+
+            const openModal = (modalElement) => { /* ... (same openModal logic) ... */ };
+            const closeModal = (modalElement) => { /* ... (same closeModal logic - check button text) ... */ };
+
+            openQuoteButtons.forEach(button => button.addEventListener('click', (e) => { e.preventDefault(); openModal(quoteModal); }));
+            closeButtons.forEach(button => button.addEventListener('click', () => closeModal(button.closest('.modal'))));
+            window.addEventListener('click', (event) => { if (event.target === quoteModal) closeModal(quoteModal); });
+            window.addEventListener('keydown', (event) => { if (event.key === 'Escape' && quoteModal && quoteModal.style.display === 'block') closeModal(quoteModal); });
+
+            // --- Mobile Menu Toggle ---
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a, button');
+            if (hamburgerButton && mobileMenu) { /* ... (same mobile menu logic) ... */ }
+
+            // --- Quote Form Submission (Catering Inquiry) ---
+            const quoteForm = document.getElementById('quote-form');
+            const submitQuoteButton = document.getElementById('submit-quote');
+            const feedbackDiv = document.getElementById('quote-feedback');
+            if (quoteForm && submitQuoteButton && feedbackDiv) {
+                 quoteForm.addEventListener('submit', (event) => {
+                     event.preventDefault();
+                     // Validation for modal fields
+                     const name = quoteForm.querySelector('#modal-name').value.trim();
+                     const phone = quoteForm.querySelector('#modal-phone').value.trim();
+                     const email = quoteForm.querySelector('#modal-email').value.trim();
+                     const details = quoteForm.querySelector('#modal-details').value.trim();
+                     if (!name || !phone || !email || !details) { feedbackDiv.textContent = 'Please fill in all required fields.'; feedbackDiv.className = 'form-feedback error'; return; }
+
+                     feedbackDiv.textContent = 'Sending your inquiry...'; feedbackDiv.className = 'form-feedback loading'; submitQuoteButton.disabled = true; submitQuoteButton.textContent = 'Sending...';
+                     setTimeout(() => {
+                         feedbackDiv.textContent = 'Thank you! Your catering inquiry is submitted. We\'ll contact you soon!';
+                         feedbackDiv.className = 'form-feedback success';
+                         quoteForm.reset();
+                         setTimeout(() => {
+                             submitQuoteButton.disabled = false; submitQuoteButton.textContent = 'Send Catering Inquiry';
+                         }, 2500);
+                     }, 1500);
+                 });
+            }
+
+            // --- FAQ Accordion ---
+             // Ensure mobile menu logic is included
+             if (hamburgerButton && mobileMenu) {
+                hamburgerButton.addEventListener('click', () => { const isExpanded = hamburgerButton.getAttribute('aria-expanded') === 'true'; mobileMenu.classList.toggle('hidden'); hamburgerButton.setAttribute('aria-expanded', String(!isExpanded)); hamburgerButton.classList.add('shake-animation'); setTimeout(() => { hamburgerButton.classList.remove('shake-animation'); }, 400); });
+                mobileMenuLinks.forEach(link => { link.addEventListener('click', () => { if (link.tagName === 'A' || link.id === 'mobile-quote-button' || link.classList.contains('button')) { mobileMenu.classList.add('hidden'); hamburgerButton.setAttribute('aria-expanded', 'false'); } }); }); // Close on any button/link click
+            }
+             // Ensure FAQ logic is included
+             const faqItems = document.querySelectorAll('.faq-item');
+             faqItems.forEach(item => {
+                const questionButton = item.querySelector('.faq-question'); const answerDiv = item.querySelector('.faq-answer'); const iconSpan = item.querySelector('.faq-icon');
+                if (questionButton && answerDiv && iconSpan) { questionButton.addEventListener('click', () => { const isOpening = !item.classList.contains('open'); item.classList.toggle('open'); questionButton.setAttribute('aria-expanded', isOpening); answerDiv.setAttribute('aria-hidden', !isOpening);
+                        if (isOpening) { answerDiv.style.maxHeight = answerDiv.scrollHeight + 'px'; iconSpan.textContent = '−'; } else { answerDiv.style.maxHeight = null; iconSpan.textContent = '+'; } });
+                    window.addEventListener('resize', () => { if (item.classList.contains('open')) { answerDiv.style.maxHeight = null; requestAnimationFrame(() => { answerDiv.style.maxHeight = answerDiv.scrollHeight + 'px'; }); } }); } });
+
+        }); // End DOMContentLoaded
+    </script>
+
+</body>
+</html>
